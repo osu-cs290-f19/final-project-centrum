@@ -1,0 +1,34 @@
+{{>header}}
+<main class="content">
+
+  {{#if renderHome}}
+    {{>homepage}}
+  {{/if}}
+
+  {{#if renderAbout}}
+  {{> about}}
+  {{/if}}
+
+  <section id="sale-section">
+
+    {{#if singlePost}}
+      {{>singlepost}}
+    {{/if}}
+
+    {{#if multiPost}}
+      {{#each sales}}
+        {{>singlepost}}
+      {{/each}}
+    {{/if}}
+
+    {{#if createpost}}
+      {{> createpost}}
+    {{/if}}
+
+  </section>
+
+  {{#if is404}}
+    {{>404}}
+  {{/if}}
+
+</main

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>YardS4le Centrum</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/index.js" charset="utf-8" defer></script>
+    <script src="/singleSaleTemplate.js" charset="utf-8" defer></script>
+  </script>
+
+  <script>
+  // Initialize and add the map
+  function initMap() {
+    var sale1 = {
+      lat: 44.5672487,lng: -123.2894265
+    };
+    var sale2 = {
+      lat: 44.5672467,lng: -123.2894275
+    };
+    var sale3 = {
+      lat: 44.5672457,lng: -123.2894295
+    };
+    var sale4 = {
+      lat: 44.5672474,lng: -123.2894260
+    };
+    var sale5 = {
+      lat: 44.5672489,lng: -123.2894252
+    };
+    // The map
+    var map = new google.maps.Map(
+      document.getElementById('map'), {
+        zoom: 13,
+        center: sale4
+      });
+    // The marker
+    var contentString = "A sale is here!";
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    var marker1 = new google.maps.Marker({
+      position: sale1,
+      map: map,
+      title: "Bob Jensen's Sale"
+    });
+    var marker2 = new google.maps.Marker({
+      position: sale2,
+      map: map,
+      title: "Chet Saget's Sale"
+    });
+    var marker3 = new google.maps.Marker({
+      position: sale3,
+      map: map,
+      title: "Dorothy Barnes' Sale"
+    });
+    var marker4 = new google.maps.Marker({
+      position: sale4,
+      map: map,
+      title: "James Jameson's Sale"
+    });
+    var marker5 = new google.maps.Marker({
+      position: sale5,
+      map: map,
+      title: "Ronald Ronaldson's Sale"
+    });
+
+    marker1.addListener('click', function() {
+      infowindow.open(map, marker1);
+    });
+    marker2.addListener('click', function() {
+      infowindow.open(map, marker2);
+    });
+    marker3.addListener('click', function() {
+      infowindow.open(map, marker3);
+    });
+    marker4.addListener('click', function() {
+      infowindow.open(map, marker4);
+    });
+    marker5.addListener('click', function() {
+      infowindow.open(map, marker5);
+    });
+
+  }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+  </script>
+</head>
+
+<body>
+  {{{body}}}
+</body>
+
+</html>

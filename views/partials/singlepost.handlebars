@@ -1,0 +1,50 @@
+<div class="single-sale">
+  <div class="single-sale-title">
+    {{saleTitle}}
+  </div>
+
+  <script>
+  // Initialize and add the map
+  function initMap() {
+    var {{deletionCode}} = {
+      lat: {{latitude}},lng: {{longitude}}
+    };
+    // The map
+    var {{uniqueID}} = new google.maps.Map(
+      document.getElementById('{{uniqueID}}'), {
+        zoom: 13,
+        center: {{deletionCode}}
+      });
+
+    var marker = new google.maps.Marker({
+      position: {{deletionCode}},
+      map: {{uniqueID}},
+      title: "the first marker"
+    });
+  }
+  </script>
+
+  <div class="single-map-holder">
+    <div id={{uniqueID}} class = "google-map">
+    </div>
+  </div>
+  <div class="single-sale-contents">
+    <div class="thumbnail-title-holder">
+      <span>{{thumbnailTitle}} </span>
+      <div class="thumbnail-holder">
+        <img src={{thumbnailUrl}} alt={{thumbnailTitle}}>
+      </div>
+    </div>
+    <div class="sale-info-container">
+      <div class="single-seller">Seller : {{seller}}</div>
+      <div class="single-average-item-value">Average value per item : ${{averageItemValue}}</div>
+      <div class="single-hours">Hours of operation : {{hours}}</div>
+      <div class="single-estimated-items">Number of items : {{estimatedItems}}</div>
+      <div class="single-description">Description : {{description}}</div>
+      <div class="single-deletion-code-holder">
+        <input type="text" name="deletion-code-input" id="deletion-code" class="deleter" placeholder="enter deletion code here: ">
+        <button type="button" name="button" class = "deleterButton" id = "delete-me-button"> Submit </button>
+      </div>
+    </div>
+  </div>
+</div>

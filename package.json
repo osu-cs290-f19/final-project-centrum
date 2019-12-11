@@ -1,0 +1,23 @@
+{
+  "name": "yardsale-centrum",
+  "version": "1.0.0",
+  "description": "post your own yardsales online",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "handlebars -f public/singleSaleTemplate.js views/partials/singlepost.handlebars",
+    "prestart": "npm run build",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "author": "Colston Warne",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
+  }
+}
